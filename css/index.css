@@ -15,7 +15,36 @@ body,html,.swiper-container,.swiper-slide{
     left: 50%;
     margin-left: -.4rem;
     width: .8rem;
+    -webkit-animation: arrowFlash 1s linear 0s infinite;
+    animation: arrowFlash 1s linear 0s infinite;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
+@-webkit-keyframes arrowFlash {
+    0%, 100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+@keyframes arrowFlash {
+    0%, 100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
 .page1,.page2,.page3,.page4,.page5{
     position: relative;
     background: url("../img/bg.png") no-repeat;
@@ -23,8 +52,8 @@ body,html,.swiper-container,.swiper-slide{
 }
 .page1>*,.page2>*,.page3>*,.page4>*,.page5>*{
     position: absolute;
+    opacity: 0;
 }
-
 
 /*--music start--*/
 .music {
@@ -96,9 +125,15 @@ body,html,.swiper-container,.swiper-slide{
     margin-left: -1.3rem;
     width: 2.6rem;
     height: 2rem;
+    opacity: 1;
 }
+
 .name>img{
     width: .8rem;
+    opacity: 1;
+}
+#page1>img{
+    opacity: 1;
 }
 #page1>img:nth-child(1){
     -webkit-animation: zoomIn .5s both;
@@ -112,6 +147,7 @@ body,html,.swiper-container,.swiper-slide{
     -webkit-animation: rotateIn .3s both;
     animation: rotateIn .3s both;
 }
+
 .name>img:nth-child(1){
     -webkit-animation: bounceInLeft 1s .8s both;
     animation: bounceInLeft 1s .8s both;
@@ -450,8 +486,8 @@ body,html,.swiper-container,.swiper-slide{
     animation-delay: .6s;
 }
 #page5>img:nth-child(4){
-    -webkit-animation: swing 1.5s infinite both;
-    animation: swing 1.5s infinite both;
+    -webkit-animation: swing 1.5s /*infinite*/ both;
+    animation: swing 1.5s /*infinite*/ both;
 }
 
 
@@ -466,6 +502,9 @@ body,html,.swiper-container,.swiper-slide{
     50% {
         opacity: 1;
     }
+    100% {
+        opacity: 1;
+    }
 }
 @keyframes zoomIn {
     from {
@@ -475,6 +514,9 @@ body,html,.swiper-container,.swiper-slide{
     }
 
     50% {
+        opacity: 1;
+    }
+    100% {
         opacity: 1;
     }
 }
@@ -569,6 +611,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: none;
         transform: none;
+        opacity: 1;
     }
 }
 @keyframes bounceInLeft {
@@ -602,6 +645,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: none;
         transform: none;
+        opacity: 1;
     }
 }
 @-webkit-keyframes bounceInRight {
@@ -635,6 +679,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: none;
         transform: none;
+        opacity: 1;
     }
 }
 @keyframes bounceInRight {
@@ -668,6 +713,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: none;
         transform: none;
+        opacity: 1;
     }
 }
 @-webkit-keyframes bounceInUp {
@@ -701,6 +747,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
 }
 @keyframes bounceInUp {
@@ -734,6 +781,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
 }
 @-webkit-keyframes tada {
@@ -760,6 +808,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
+        opacity: 1;
     }
 }
 @keyframes tada {
@@ -786,6 +835,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
+        opacity: 1;
     }
 }
 @-webkit-keyframes bounceOut {
@@ -848,6 +898,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: rotate3d(0, 0, 1, 0deg);
         transform: rotate3d(0, 0, 1, 0deg);
+        opacity: 1;
     }
 }
 @keyframes swing {
@@ -874,6 +925,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: rotate3d(0, 0, 1, 0deg);
         transform: rotate3d(0, 0, 1, 0deg);
+        opacity: 1;
     }
 }
 @-webkit-keyframes flipInY {
@@ -906,6 +958,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: perspective(400px);
         transform: perspective(400px);
+        opacity: 1;
     }
 }
 @keyframes flipInY {
@@ -938,6 +991,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: perspective(400px);
         transform: perspective(400px);
+        opacity: 1;
     }
 }
 @-webkit-keyframes wobble {
@@ -974,6 +1028,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: none;
         transform: none;
+        opacity: 1;
     }
 }
 @keyframes wobble {
@@ -1010,6 +1065,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: none;
         transform: none;
+        opacity: 1;
     }
 }
 @-webkit-keyframes bounceInDown {
@@ -1043,6 +1099,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: none;
         transform: none;
+        opacity: 1;
     }
 }
 @keyframes bounceInDown {
@@ -1076,6 +1133,7 @@ body,html,.swiper-container,.swiper-slide{
     to {
         -webkit-transform: none;
         transform: none;
+        opacity: 1;
     }
 }
 @-webkit-keyframes fadeOut {
